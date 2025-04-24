@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .stars {
+    @apply absolute w-full h-full;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 90px 40px, #ddd, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    animation: twinkle 5s ease-in-out infinite alternate;
+  }
+
+  .space-background {
+    @apply fixed inset-0;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  }
+
+  .scanline {
+    @apply fixed top-0 left-0 w-full h-1;
+    background: rgba(6, 182, 212, 0.1);
+    opacity: 0.3;
+    animation: scanline 8s linear infinite;
+  }
+
+  .tech-line {
+    @apply relative h-px;
+    background: linear-gradient(to right, transparent, rgba(6, 182, 212, 0.5), transparent);
+  }
+
+  .tech-line::after {
+    content: '';
+    @apply absolute top-0 left-0 w-[30%] h-px;
+    background: rgba(6, 182, 212, 0.8);
+    animation: techMove 3s infinite;
+  }
+
+  .input-sci-fi {
+    @apply transition-all duration-300;
+  }
+
+  .input-sci-fi:focus {
+    @apply outline-none;
+    box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.5), 0 0 15px rgba(6, 182, 212, 0.3);
+    border-color: rgba(8, 145, 178, 0.8) !important;
+  }
+
+  .hologram {
+    @apply relative overflow-hidden;
+  }
+
+  .hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(6, 182, 212, 0.05) 0%,
+      rgba(6, 182, 212, 0.1) 100%
+    );
+    pointer-events: none;
+  }
+
+  .signature-text {
+    @apply font-serif italic tracking-wide;
+    text-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
+  }
+
+  .company-title {
+    @apply text-center text-cyan-300 text-lg;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  }
+
+  .pdf-ticket {
+    @apply relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 p-6 rounded-lg border border-cyan-500/30;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+    page-break-inside: avoid;
+    min-height: 400px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .pdf-signature {
+    @apply relative mt-8 flex flex-col items-end;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure text remains crisp in PDF */
+  .pdf-text {
+    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes techMove {
+  0% { left: 0%; }
+  100% { left: 70%; }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes hologramScan {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
