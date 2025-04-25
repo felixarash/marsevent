@@ -101,11 +101,11 @@ export default function RegisterPage() {
         }}></div>
       </div>
       
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-2 sm:px-4 py-6 sm:py-12 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Header section */}
-          <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 inline-block">
+          <div className="text-center mb-6 sm:mb-10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 inline-block">
               Mars Event Registration
             </h1>
             <div className="mt-4 relative">
@@ -120,16 +120,16 @@ export default function RegisterPage() {
           </div>
           
           {/* Registration form card */}
-          <div className="bg-gray-900/60 backdrop-blur-md border border-cyan-800/50 rounded-xl shadow-2xl shadow-cyan-900/20 p-6 md:p-8 mb-8 relative overflow-hidden">
+          <div className="bg-gray-900/60 backdrop-blur-md border border-cyan-800/50 rounded-xl shadow-2xl shadow-cyan-900/20 p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500"></div>
             <div className="absolute top-0 right-0 h-16 w-16 -mt-8 -mr-8 bg-cyan-500/10 rounded-full blur-xl"></div>
             <div className="absolute bottom-0 left-0 h-32 w-32 -mb-16 -ml-16 bg-blue-500/10 rounded-full blur-xl"></div>
             
             <form onSubmit={handleSubmit} className="relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {/* Personal Information */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <div className="mb-6">
                     <h2 className="text-xl font-semibold text-cyan-300 flex items-center">
                       <span className="inline-block mr-2 w-6 h-6 rounded-full bg-cyan-800/50 flex items-center justify-center text-sm border border-cyan-500/50">1</span>
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                 </div>
                 
                 {/* Origin Information */}
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   <div className="mb-6">
                     <h2 className="text-xl font-semibold text-cyan-300 flex items-center">
                       <span className="inline-block mr-2 w-6 h-6 rounded-full bg-cyan-800/50 flex items-center justify-center text-sm border border-cyan-500/50">2</span>
@@ -270,17 +270,17 @@ export default function RegisterPage() {
               </div>
               
               {/* Photo Upload Section */}
-              <div className="mt-8 mb-8">
+              <div className="mt-6 sm:mt-8 mb-6 sm:mb-8">
                 <h2 className="text-xl font-semibold text-cyan-300 flex items-center">
                   <span className="inline-block mr-2 w-6 h-6 rounded-full bg-cyan-800/50 flex items-center justify-center text-sm border border-cyan-500/50">3</span>
                   Identification Photo
                 </h2>
                 <div className="h-px bg-gradient-to-r from-cyan-800/50 to-transparent mt-2 mb-6"></div>
                 
-                <div className={`border-2 ${formErrors.photo ? 'border-red-500' : 'border-cyan-800/30'} border-dashed rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 bg-slate-900/40`}>
-                  <div className="flex-shrink-0">
+                <div className={`border-2 ${formErrors.photo ? 'border-red-500' : 'border-cyan-800/30'} border-dashed rounded-xl p-4 sm:p-6 flex flex-col md:flex-row items-center gap-4 sm:gap-6 bg-slate-900/40`}>
+                  <div className="flex-shrink-0 w-full md:w-auto">
                     {photoPreview ? (
-                      <div className="relative w-40 h-40">
+                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto md:mx-0">
                         <Image 
                           src={photoPreview}
                           alt="Preview"
@@ -299,7 +299,7 @@ export default function RegisterPage() {
                         </button>
                       </div>
                     ) : (
-                      <div className="w-40 h-40 rounded-lg bg-slate-800/80 border-2 border-cyan-800/50 flex flex-col items-center justify-center">
+                      <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto md:mx-0 rounded-lg bg-slate-800/80 border-2 border-cyan-800/50 flex flex-col items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-cyan-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -341,7 +341,7 @@ export default function RegisterPage() {
               </div>
               
               {/* Terms and Conditions */}
-              <div className="mb-8 bg-slate-900/40 p-4 rounded-lg border border-cyan-800/30">
+              <div className="mb-6 sm:mb-8 bg-slate-900/40 p-3 sm:p-4 rounded-lg border border-cyan-800/30">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
                     <input
@@ -358,15 +358,14 @@ export default function RegisterPage() {
                   </div>
                 </div>
               </div>
-              
 
-              <div className="flex justify-between mt-3">
+              <div className="flex justify-center sm:justify-between mt-3">
                 {/* Submit Button */}
-                <div className="flex justify-center mt-10">
+                <div className="flex justify-center mt-6 sm:mt-10 w-full sm:w-auto">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="relative px-8 py-4 bg-gradient-to-r from-cyan-900/90 to-blue-900/90 hover:from-cyan-800 hover:to-blue-800 rounded-lg flex items-center justify-center min-w-[200px] transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] border border-cyan-800/50"
+                    className="relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-900/90 to-blue-900/90 hover:from-cyan-800 hover:to-blue-800 rounded-lg flex items-center justify-center min-w-[180px] sm:min-w-[200px] transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] border border-cyan-800/50 w-full sm:w-auto"
                   >
                     {loading ? (
                       <div className="flex items-center">

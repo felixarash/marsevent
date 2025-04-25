@@ -1,0 +1,65 @@
+/* ID card sized ticket styling */
+.ticket-card {
+  width: 100%;
+  max-width: 320px; /* ~85.6mm in pixels */
+  aspect-ratio: 1.586/1; /* Standard ID card ratio (85.6mm / 53.98mm) */
+  margin: 0 auto;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.ticket-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+/* QR code container for ID card layout */
+.qr-container {
+  width: 100%;
+  max-width: 80px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+/* Responsive scaling */
+@media screen and (max-width: 640px) {
+  .ticket-card {
+    max-width: 300px;
+    transform: scale(0.95);
+  }
+  
+  .qr-container {
+    max-width: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ticket-card {
+    max-width: 280px;
+    transform: scale(0.9);
+  }
+  
+  .qr-container {
+    max-width: 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .ticket-card {
+    max-width: 260px;
+    transform: scale(0.85);
+  }
+}
+
+/* Print settings */
+@media print {
+  .ticket-card {
+    width: 85.6mm !important;
+    height: 53.98mm !important;
+    transform: none !important;
+  }
+}

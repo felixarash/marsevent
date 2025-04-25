@@ -1,0 +1,61 @@
+/* Add these styles to your existing globals.css file */
+
+/* Ticket responsive styles */
+@media print {
+  .ticket-container {
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Override some styles for better PDF output */
+@media only screen and (max-width: 600px) {
+  .ticket-container {
+    padding: 12px;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .ticket-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .ticket-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .qr-container {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Ensure the ticket always fits in the viewport */
+.ticket-container {
+  width: 100%;
+  box-sizing: border-box;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  overflow: visible !important;
+}
+
+/* Additional mobile responsiveness */
+@media only screen and (max-width: 480px) {
+  .ticket-container {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .ticket-header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ensure PDF capture works properly on all screens */
+.pdf-ready {
+  overflow: visible !important;
+  width: 100% !important;
+  height: auto !important;
+  transform: none !important;
+}
